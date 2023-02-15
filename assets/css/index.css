@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    font-family: 'Itim', cursive;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav {
+    margin: 0 auto;
+    width: 65%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav ul li {
+    margin-left: 20px;
+    cursor: pointer;
+    color: #000;
+}
+
+nav ul li:hover {
+    color: #3525af;
+}
+
+nav ul li i {
+    color: #8d8d8d;
+}
+
+nav .logo {
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+nav .logo a {
+    color: #3525af;
+    position: relative;
+}
+
+nav .logo a::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: linear-gradient(40deg, #70efd1 10%, #1bc1c1 90%);
+    border-radius: 50%;
+    animation: logoAnimation 1s alternate infinite;
+    bottom: -3px;
+    right: -15px;
+}
+
+@keyframes logoAnimation {
+    to {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.content {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    color: #6e6e6e;
+}
+
+.content h2 {
+    font-size: 50px;
+}
+
+.content h1 {
+    font-size: 90px;
+}
+
+.content h1 br {
+    display: none;
+}
+
+.content h1 span {
+    color: #7e0000;
+}
+
+.content p {
+    font-size: 25px;
+}
+
+.image {
+    position: absolute;
+    right: 6%;
+    bottom: 0;
+}
+
+.image img {
+    animation: resize 4s alternate infinite linear;
+}
+
+@keyframes resize {
+    from {
+        width: 115%;
+    }
+    to {
+        width: 108%;
+    }
+}
+
+.circle-xx {
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    border-radius: 50%;
+    top: 35%;
+    left: -10%;
+    background: linear-gradient(-140deg, #70efd1 10%, #1bc1c1 90%);
+    animation: remove-xx 4s alternate infinite linear;
+}
+
+@keyframes remove-xx {
+    to {
+        top: 33%;
+        left: -8%;
+    }
+}
+
+.circle-xy {
+    width: 472px;
+    height: 472px;
+    position: absolute;
+    right: 7%;
+    top: 15%;
+    border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
+    transition: border-radius 13s ease;
+    animation: border 10s infinite;
+    background: linear-gradient(40deg, #70efd1 10%, #1bc1c1 90%);
+}
+
+@keyframes border {
+    0% {
+        border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
+    }
+    50% {
+        border-radius: 31% 69% 59% 41%/28% 24% 76% 72%;
+    }
+    100% {
+        border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 100vw;
+    }
+
+    .container {
+        height: auto;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    nav {
+        width: 95%;
+        margin-top: 4px;
+    }
+
+    nav .logo {
+        font-size: 35px;
+        margin-top: 0;
+        margin-left: 5px;
+    }
+
+    .lists {
+        display: none;
+    }
+
+    .circle-xx {
+        width: 20vw;
+        height: 20vw;
+        left: unset;
+    }
+
+    @keyframes remove-xx {
+        from {
+            top: 10vh;
+            right: -5vw;
+        }
+        to {
+            top: 15vh;
+            right: -2vw;
+        }
+    }
+
+    .content {
+        color: #000;
+        top: 18%;
+        left: 5%;
+    }
+
+    .content h2 {
+        font-size: 30px;
+        color: #2e2e2e;
+    }
+
+    .content h2 {
+        font-size: 50px;
+    }
+    
+    .content h1 {
+        font-size: 70px;
+    }
+
+    .content h1 br {
+        display: block;
+    }
+
+    .content p {
+        display: none;
+    }
+
+    .image {
+        margin-left: 100px;
+        right: -2%;
+    }
+
+    .circle-xy {
+        width: 90vw;
+        height: 90vw;
+        left: -20vw;
+        top: 30vh;
+    }
+
+}
