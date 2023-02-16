@@ -10,21 +10,43 @@
 
 body {
     width: 100vw;
+    display: inline;
     font-family: 'Itim', cursive;
-    overflow: auto;
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar { 
     width: 0 !important;
     display: none; 
-  }
+}
+
+.main {
+    width: 100vw;
+    max-height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y;
+}
+
+.main::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f7f7f7;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: linear-gradient(-140deg, #ffec44 10%, #ff905d 90%);
+    border-radius: 6px;
+}
+
+.main::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}   
 
 .container {
+    scroll-snap-align: start;
     width: 100%;
-    height: calc(100vh - var(--nav-height));
+    height: 100vh;
     position: relative;
+    box-shadow: 2px 2px 5px #f3f3f3;
 }
 
 a {
@@ -42,7 +64,7 @@ a {
 }
 
 nav {
-    width: 60%;
+    width: 50%;
     height: var(--nav-height);
     display: flex;
     justify-content: space-between;
@@ -64,21 +86,57 @@ nav ul li {
     color: #000;
 }
 
-nav ul li:hover {
+.lists li:hover a {
     color: #3525af;
+    transition: color 0.4s;
 }
 
 nav ul li i {
     color: #8d8d8d;
+    font-size: 30px;
 }
 
-nav .logo {
+.links li:hover i {
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px #ccc;
+    transition: color 0.4s;
+}
+
+.facebook:hover i{
+    color: #10dbff;
+}
+.github:hover i{
+    color: #000;
+}
+.youtube:hover i{
+    color: #ff1f1f;
+}
+
+.logo {
     font-family: 'Oswald', sans-serif;
-    font-size: 35px;
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 2px 2px 10px #dfdfdf;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s;
 }
 
-nav .logo a {
+.logo:hover {
+    background-color: #4a37d8;
+    box-shadow: 2px 2px 10px #8b8b8b;
+}
+
+.logo:hover a {
+    color: #fff;
+}
+
+.logo a {
     color: #3525af;
+    transition: color 0.5s;
     position: relative;
 }
 
@@ -103,6 +161,7 @@ nav .logo a {
     left: 10%;
     top: 30%;
     color: #6e6e6e;
+    height: 100%;
 }
 
 .content h2 {
@@ -121,8 +180,17 @@ nav .logo a {
     color: #7e0000;
 }
 
-.content p {
+.name {
     font-size: 25px;
+    color: #252525;
+    text-align: right;
+    position: absolute;
+    top: 70%;
+    right: 30%;
+}
+
+.name::after {
+    /* content: "|"; */
 }
 
 .image {
@@ -145,8 +213,8 @@ nav .logo a {
 }
 
 .circle-xx {
-    width: 550px;
-    height: 550px;
+    width: 30vw;
+    height: 30vw;
     position: absolute;
     border-radius: 50%;
     top: 35%;
@@ -163,8 +231,8 @@ nav .logo a {
 }
 
 .circle-xy {
-    width: 472px;
-    height: 472px;
+    width: 25vw;
+    height: 25vw;
     position: absolute;
     right: 7%;
     top: 15%;
@@ -186,36 +254,57 @@ nav .logo a {
     }
 }
 
-.about {
-    height: calc(100vh - var(--nav-height));
-}
-
 
 @media only screen and (max-width: 768px) {
     body {
         width: 100vw;
     }
 
+    .main::-webkit-scrollbar {
+        width: 3px;
+        background-color: #f7f7f7;
+    }
+
     .container {
-        height: auto;
+        height: 100vh;
         position: relative;
-        min-height: 100vh;
-        overflow-x: hidden;
+        overflow: hidden;
+    }
+
+    .nav {
+        height: 52px;
     }
 
     nav {
+        height: 100%;
         width: 95%;
-        margin-top: 4px;
+        padding: 0 10px;
     }
 
     nav .logo {
-        font-size: 35px;
-        margin-top: 0;
-        margin-left: 5px;
+        width: 40px;
+        height: 40px;
+        box-shadow: 2px 2px 5px #3525af;
+        font-size: 28px;
+        border: unset;
+        box-shadow: unset;
+        /* margin-left: 10px; */
+    }
+
+    .logo:hover {
+        background-color: unset;
+    }
+
+    .logo:hover a {
+        color: #3525af;
     }
 
     .lists {
         display: none;
+    }
+
+    .links i {
+        font-size: 115%;
     }
 
     .circle-xx {
@@ -237,7 +326,7 @@ nav .logo a {
 
     .content {
         color: #000;
-        top: 18%;
+        top: 20%;
         left: 5%;
     }
 
@@ -258,14 +347,14 @@ nav .logo a {
         display: block;
     }
 
-    .content p {
+    .name {
         display: none;
     }
 
-    .image {
+    /* .image {
         margin-left: 100px;
         right: -2%;
-    }
+    } */
 
     .circle-xy {
         width: 90vw;
