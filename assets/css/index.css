@@ -1,21 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Oswald:wght@700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --nav-height: 70px;
 }
 
 body {
     width: 100vw;
     font-family: 'Itim', cursive;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
 }
+
+body::-webkit-scrollbar { 
+    width: 0 !important;
+    display: none; 
+  }
 
 .container {
     width: 100%;
-    height: auto;
+    height: calc(100vh - var(--nav-height));
     position: relative;
-    min-height: 100vh;
 }
 
 a {
@@ -23,14 +32,23 @@ a {
     color: #000;
 }
 
+.nav {
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #ccc;
+}
+
 nav {
-    margin: 0 auto;
-    width: 65%;
-    height: 70px;
+    width: 60%;
+    height: var(--nav-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 25px;
+    margin: 0 auto;
 }
 
 nav ul {
@@ -55,9 +73,8 @@ nav ul li i {
 }
 
 nav .logo {
-    font-size: 45px;
-    font-weight: bold;
-    margin-top: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
 }
 
 nav .logo a {
@@ -65,23 +82,20 @@ nav .logo a {
     position: relative;
 }
 
-nav .logo a::before {
+/* nav .logo a::before {
     content: "";
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     position: absolute;
     background: linear-gradient(40deg, #70efd1 10%, #1bc1c1 90%);
     border-radius: 50%;
-    animation: logoAnimation 1s alternate infinite;
+    animation: logoAnimation 3s alternate infinite;
     bottom: -3px;
     right: -15px;
-}
+} */
 
 @keyframes logoAnimation {
-    to {
-        width: 18px;
-        height: 18px;
-    }
+  
 }
 
 .content {
@@ -172,6 +186,11 @@ nav .logo a::before {
     }
 }
 
+.about {
+    height: calc(100vh - var(--nav-height));
+}
+
+
 @media only screen and (max-width: 768px) {
     body {
         width: 100vw;
@@ -255,4 +274,4 @@ nav .logo a::before {
         top: 30vh;
     }
 
-}
+}   
