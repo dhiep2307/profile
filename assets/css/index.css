@@ -24,6 +24,7 @@ body::-webkit-scrollbar {
     max-height: 100vh;
     overflow-y: auto;
     scroll-snap-type: y;
+    scroll-behavior: smooth;
 }
 
 .main::-webkit-scrollbar {
@@ -86,9 +87,12 @@ nav ul li {
     color: #000;
 }
 
+.lists li a {
+    transition: color 0.4s;
+}
+
 .lists li:hover a {
     color: #3525af;
-    transition: color 0.4s;
 }
 
 nav ul li i {
@@ -96,10 +100,13 @@ nav ul li i {
     font-size: 30px;
 }
 
+.links li i {
+    transition: color 0.4s;
+}
+
 .links li:hover i {
     border-radius: 50%;
     box-shadow: 2px 2px 5px #ccc;
-    transition: color 0.4s;
 }
 
 .facebook:hover i{
