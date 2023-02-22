@@ -5,73 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Văn Hiệp Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/grid-system.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
 
-    <div class="main">
-        <div class="container" id="home">
-            <div class="circle-xx"></div>
-            <div class="circle-xy"></div>
-            <div class="content">
-                <h2>Hi!...</h2>
-                <h1>I'm <br> <span id="typed"></span></h1>
-            </div>
-            <p class="name"><span id="desc"></span></p>
-        </div>
-        
-        <div class="container" id="about">
-        </div>
 
-        <div class="container" id="language">
+    <div class="header">
+        <div class="grid wide nav">
+            <nav class="row">
+                <div class="col spll-8 ll-8 l-7 t-6 m-11 sm-11 logo">
+                    <div class="logo-icon">VH</div>
+                    <p class="logo-text">VHIEP</p>
+                </div>
+                <div class="col spll-4 ll-4 l-5 t-6 menu">
+                    <ul class="menu-list">
+                        <li class="menu-list_item select">
+                            <a href="">Home</a>
+                        </li>
+                        <li class="menu-list_item">
+                            <a href="">About</a>
+                        </li>
+                        <li class="menu-list_item">
+                            <a href="">Skills</a>
+                        </li>
+                        <li class="menu-list_item">
+                            <a href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
+    </div>
 
-        <div class="container" id="project">
+    <div class="grid wide home">
+        <div class="home-content">
+            <span class="home-content-hello">Hello,...</span>
+            <span class="home-content-name">My Name <span class="name">VAN HIEP</span></span>
+            <span class="home-content-desc">I'm Web Developer</span>
         </div>
+        <div class="home-content mobile">
+            <span class="home-content-hello">Hello,</span>
+            <span class="home-content-name">My Name</span>
+            <span class="name">VAN HIEP</span>
+            <span class="home-content-desc">I'm Web Developer</span>
+        </div>
+    </div>
+
     
-    </div>
-
-    <div class="nav">
-        <nav>
-            <div class="logo">
-                <a href="#">VH</a>
-            </div>
-            <ul class="lists">
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#language">Language</a>
-                </li>
-                <li>
-                    <a href="#project">Project</a>
-                </li>
-            </ul>
-            <ul class="links">
-                <li class="facebook" title="Facebook">
-                    <a href="https://www.facebook.com/duongvanhiep123/" target="_blank">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                </li>
-                <li class="github" title="Github">
-                    <a href="https://github.com/dhiep2307" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </li>
-                <li class="youtube" title="Youtube">
-                    <a href="https://www.youtube.com/channel/UClyeWgwRxkYNCIq4trDtaEQ" target="_blank">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="./assets/js/index.js"></script>
-</body>
+</body> 
 </html>

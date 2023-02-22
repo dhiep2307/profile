@@ -1,373 +1,280 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Itim&family=Oswald&family=Phudu:wght@300&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --nav-height: 70px;
-}
-
-body {
-    width: 100vw;
-    display: inline;
     font-family: 'Itim', cursive;
 }
 
-body::-webkit-scrollbar { 
-    width: 0 !important;
-    display: none; 
+:root {
+    --header-height: 54px;
+
+
+    --white-color: #fff;
+    --purple-color: #6600cc;
+    --black-color: #000;
 }
 
-.main {
-    width: 100vw;
-    max-height: 100vh;
-    overflow-y: auto;
-    scroll-snap-type: y;
-    scroll-behavior: smooth;
+body {
+    padding-top: calc(var(--header-height) + 2px);
+    overflow-x: hidden;
 }
 
-.main::-webkit-scrollbar {
-    width: 6px;
-    background-color: #f7f7f7;
+body::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
 }
 
-.main::-webkit-scrollbar-thumb {
-    background: linear-gradient(-140deg, #ffec44 10%, #ff905d 90%);
-    border-radius: 6px;
+body::-webkit-scrollbar-track {
+    background: #fff;
 }
 
-.main::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-}   
-
-.container {
-    scroll-snap-align: start;
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom left, #ff6600 0%, #ff9900 100%);
+}
+.header {
+    z-index: 10;
+    background-color: var(--white-color);
     width: 100%;
-    height: 100vh;
-    position: relative;
-    box-shadow: 2px 2px 5px #f3f3f3;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
+    height: var(--header-height);
+    box-shadow: 1px 1px 8px #f1f1f1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
 }
 
 .nav {
-    width: 100%;
-    position: fixed;
-    right: 0;
-    top: 0;
-    background-color: #fff;
-    box-shadow: 2px 2px 5px #ccc;
+    height: 100%;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-nav {
-    width: 50%;
-    height: var(--nav-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 25px;
-    margin: 0 auto;
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-between;
-    position: relative;
-}
-
-nav ul li {
-    margin-left: 20px;
-    cursor: pointer;
-    color: #000;
-}
-
-.lists li a {
-    transition: color 0.4s;
-}
-
-.lists li:hover a {
-    color: #3525af;
-}
-
-nav ul li i {
-    color: #8d8d8d;
-    font-size: 30px;
-}
-
-.links li i {
-    transition: color 0.4s;
-}
-
-.links li:hover i {
-    border-radius: 50%;
-    box-shadow: 2px 2px 5px #ccc;
-}
-
-.facebook:hover i{
-    color: #10dbff;
-}
-.github:hover i{
-    color: #000;
-}
-.youtube:hover i{
-    color: #ff1f1f;
+.nav nav {
+    height: 100%;
+    justify-content: right;
 }
 
 .logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 32px;
-    width: 50px;
-    height: 50px;
-    box-shadow: 2px 2px 10px #dfdfdf;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.5s;
-}
-
-.logo:hover {
-    background-color: #4a37d8;
-    box-shadow: 2px 2px 10px #8b8b8b;
-}
-
-.logo:hover a {
-    color: #fff;
-}
-
-.logo a {
-    color: #3525af;
-    transition: color 0.5s;
-    position: relative;
-}
-
-/* nav .logo a::before {
-    content: "";
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    background: linear-gradient(40deg, #70efd1 10%, #1bc1c1 90%);
-    border-radius: 50%;
-    animation: logoAnimation 3s alternate infinite;
-    bottom: -3px;
-    right: -15px;
-} */
-
-@keyframes logoAnimation {
-  
-}
-
-.content {
-    position: absolute;
-    left: 10%;
-    top: 30%;
-    color: #6e6e6e;
     height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
-.content h2 {
-    font-size: 50px;
+.logo-icon {
+    font-size: 1rem;
+    padding: 4px 4px;
+    border: 1px solid black;
+    border-radius: .4rem;
+    font-family: 'Gajraj One', cursive;
+    background: linear-gradient(to bottom left, #9933ff 0%, #cc33ff 100%);
+    color: var(--white-color);
 }
 
-.content h1 {
-    font-size: 90px;
+.logo-text {
+    font-size: 1.6rem;
+    padding: 2px 10px;
+    font-family: 'Gajraj One', cursive;
 }
 
-.content h1 br {
+.menu {
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.menu-list {
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
     display: none;
 }
 
-.content h1 span {
-    color: #7e0000;
+.menu-list_item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    position: relative;
+    padding: 0px 5px;
+    transition: padding-bottom .2s;
 }
 
-.name {
-    font-size: 25px;
-    color: #252525;
-    text-align: right;
+.menu-list_item a {
+    text-decoration: none;
+    color: var(--black-color);
+    transition: color .5s;
+}
+
+.select.menu-list_item::before {
     position: absolute;
-    top: 70%;
-    right: 30%;
-}
-
-.name::after {
-    /* content: "|"; */
-}
-
-.image {
-    position: absolute;
-    right: 6%;
+    content: "";
+    height: 4px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom left, #9933ff 0%, #cc33ff 100%);
+    left: 0;
+    right: 0;
     bottom: 0;
 }
 
-.image img {
-    animation: resize 4s alternate infinite linear;
+.menu-list_item a:hover {
+    color: var(--purple-color);
+    padding-bottom: 2px;
+
 }
 
-@keyframes resize {
-    from {
-        width: 115%;
-    }
-    to {
-        width: 108%;
-    }
+.home {
+    position: relative;
+    height: calc(100vh - var(--header-height));
 }
 
-.circle-xx {
-    width: 30vw;
-    height: 30vw;
+.home-content {
     position: absolute;
-    border-radius: 50%;
-    top: 35%;
-    left: -10%;
-    background: linear-gradient(-140deg, #70efd1 10%, #1bc1c1 90%);
-    animation: remove-xx 4s alternate infinite linear;
+    top: 25%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-@keyframes remove-xx {
-    to {
-        top: 33%;
-        left: -8%;
+.mobile {
+    display: none;
+}
+
+.home-content-hello {
+    font-size: 4rem;
+}
+
+.home-content-name {
+    font-size: 6rem;
+}
+
+.name {
+    color: var(--purple-color);
+    font-family: 'Gajraj One', cursive;
+}
+.home-content-name .name {
+}
+
+.home-content-desc {
+    font-size: 3.5rem;
+}
+
+@media only screen and (min-width: 48em) {
+    .menu-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
-.circle-xy {
-    width: 25vw;
-    height: 25vw;
-    position: absolute;
-    right: 7%;
-    top: 15%;
-    border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
-    transition: border-radius 13s ease;
-    animation: border 10s infinite;
-    background: linear-gradient(40deg, #70efd1 10%, #1bc1c1 90%);
-}
-
-@keyframes border {
-    0% {
-        border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
-    }
-    50% {
-        border-radius: 31% 69% 59% 41%/28% 24% 76% 72%;
-    }
-    100% {
-        border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
-    }
-}
-
-
-@media only screen and (max-width: 768px) {
-    body {
-        width: 100vw;
-    }
-
-    .main::-webkit-scrollbar {
+@media only screen and (max-width: 37.5em) {
+    body::-webkit-scrollbar {
         width: 3px;
-        background-color: #f7f7f7;
     }
 
-    .container {
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .nav {
-        height: 52px;
-    }
-
-    nav {
-        height: 100%;
-        width: 95%;
-        padding: 0 10px;
-    }
-
-    nav .logo {
-        width: 40px;
-        height: 40px;
-        box-shadow: 2px 2px 5px #3525af;
-        font-size: 28px;
-        border: unset;
-        box-shadow: unset;
-        /* margin-left: 10px; */
-    }
-
-    .logo:hover {
-        background-color: unset;
-    }
-
-    .logo:hover a {
-        color: #3525af;
-    }
-
-    .lists {
+    .home-content {
+        width: 100vw;
+        align-items: center;
+        top: 18%;
         display: none;
     }
 
-    .links i {
-        font-size: 115%;
+    .home-content.mobile {
+        display: flex;
     }
 
-    .circle-xx {
-        width: 20vw;
-        height: 20vw;
-        left: unset;
+    .home-content-hello {
+        font-size: 2.5rem;
     }
-
-    @keyframes remove-xx {
-        from {
-            top: 10vh;
-            right: -5vw;
-        }
-        to {
-            top: 15vh;
-            right: -2vw;
-        }
-    }
-
-    .content {
-        color: #000;
-        top: 20%;
-        left: 5%;
-    }
-
-    .content h2 {
-        font-size: 30px;
-        color: #2e2e2e;
-    }
-
-    .content h2 {
-        font-size: 50px;
+    .home-content-name {
+        font-size: 3.5rem;
     }
     
-    .content h1 {
-        font-size: 70px;
-    }
-
-    .content h1 br {
-        display: block;
-    }
-
     .name {
+        font-size: 4rem;
+        color: var(--purple-color);
+        font-family: 'Gajraj One', cursive;
+    }
+    
+    .home-content-desc {
+        font-size: 2rem;
+    }
+}
+
+
+/* 600px --- 767px */
+@media only screen and (min-width: 37.5em) and (max-width: 47.9375em) {
+    body::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .home-content {
+        width: 100vw;
+        align-items: center;
         display: none;
+        top: 20%;
     }
 
-    /* .image {
-        margin-left: 100px;
-        right: -2%;
-    } */
-
-    .circle-xy {
-        width: 90vw;
-        height: 90vw;
-        left: -20vw;
-        top: 30vh;
+    .home-content.mobile {
+        display: flex;
     }
 
-}   
+    .home-content-hello {
+        font-size: 2.5rem;
+    }
+    .home-content-name {
+        font-size: 3rem;
+    }
+    
+    .name {
+        font-size: 5rem;
+        color: var(--purple-color);
+        font-family: 'Gajraj One', cursive;
+    }
+    
+    .home-content-desc {
+        font-size: 3rem;
+    }
+}
+
+/* 768px --- 991px */
+@media only screen and (min-width: 48em) and (max-width: 61.9375em) {
+    body::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .home-content-hello {
+        font-size: 2.5rem;
+    }
+    .home-content-name {
+        font-size: 4rem;
+    }
+    
+    .home-content-name .name {
+        font-size: 4.5rem;
+        color: var(--purple-color);
+        font-family: 'Gajraj One', cursive;
+    }
+    
+    .home-content-desc {
+        font-size: 3.5rem;
+    }
+}
+
+/* 992px ---  1299px */
+@media only screen and (min-width: 62em) and (max-width: 81.25em) {
+    
+}
+
+/* 1300px --- 1599px */
+@media only screen and (min-width: 81.3125em) and (max-width: 99.9375em) {
+   
+}
