@@ -16,16 +16,20 @@
     --white-color: #fff;
     --purple-color: #6600cc;
     --black-color: #000;
+    --red-color: rgb(126, 0, 0);
+    --linear-bground : linear-gradient(to bottom left, #9933ff 0%, #cc33ff 100%);
 }
 
-body {
-    padding-top: calc(var(--header-height) + 2px);
+html {
     overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y;
+    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
     width: 5px;
-    border-radius: 10px;
+    border-radius: 10px;    
 }
 
 body::-webkit-scrollbar-track {
@@ -71,7 +75,7 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid black;
     border-radius: .4rem;
     font-family: 'Gajraj One', cursive;
-    background: linear-gradient(to bottom left, #9933ff 0%, #cc33ff 100%);
+    background: var(--linear-bground);
     color: var(--white-color);
 }
 
@@ -103,13 +107,12 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.4rem;
     position: relative;
     padding: 0px 5px;
-    transition: padding-bottom .2s;
 }
 
 .menu-list_item a {
     text-decoration: none;
     color: var(--black-color);
-    transition: color .5s;
+    transition: color .5s, padding-bottom .2s;
 }
 
 .select.menu-list_item::before {
@@ -117,7 +120,7 @@ body::-webkit-scrollbar-thumb {
     content: "";
     height: 4px;
     border-radius: 3px;
-    background: linear-gradient(to bottom left, #9933ff 0%, #cc33ff 100%);
+    background: var(--linear-bground);
     left: 0;
     right: 0;
     bottom: 0;
@@ -129,9 +132,19 @@ body::-webkit-scrollbar-thumb {
 
 }
 
+.container {
+    padding-top: calc(var(--header-height) + 2px);
+    min-height: 100vh;
+}
+
+.container-line {
+    box-shadow: 1px 1px 5px #ccc;
+    height: 1px;
+    background-color: #f1f1f100;
+}
+
 .home {
     position: relative;
-    height: calc(100vh - var(--header-height));
 }
 
 .home-content {
@@ -160,11 +173,134 @@ body::-webkit-scrollbar-thumb {
     color: var(--purple-color);
     font-family: 'Gajraj One', cursive;
 }
-.home-content-name .name {
-}
 
 .home-content-desc {
     font-size: 3.5rem;
+}
+
+.home-content-contact {
+    width: 20%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-content-contact-link {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #acacac;
+    bottom: 0;
+    transition: bottom .3s;
+}
+
+.home-content-contact-link:hover {
+    bottom: 1px;
+}
+
+.home-content-contact-facebook,
+.home-content-contact-github,
+.home-content-contact-yotube {
+    transition: color .3s;
+}
+
+.home-content-contact-facebook:hover {
+    color: rgb(24, 28, 255, 0.5);
+}
+
+.home-content-contact-github:hover {
+    color: rgba(5, 5, 5, 0.5);
+}
+
+.home-content-contact-youtube:hover {
+    color: rgba(255, 7, 7, 0.5);
+}
+
+.about {
+
+}
+
+.about .row {
+}
+
+.about-col {
+    position: relative;
+    padding-top: 60px;
+}
+
+.about-col-title {
+    font-size: 2rem;
+    color: var(--purple-color);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.about-col-title::before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 2px;
+    bottom: -10px;
+    right: 0;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px var(--purple-color);
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.list-info {
+    padding: 10px 0;
+}
+
+.red {
+    color: var(--red-color);
+}
+
+.list-info-item {
+    font-size: 1.6rem;
+    margin-bottom: 45px;
+}
+
+.list-info-item i {
+    font-size: 1.4rem;
+    color: #0e0e0e;
+}
+
+.list-info-line {
+    position: relative;
+}
+
+.list-info-line::before {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 70%;
+    top: 13px;
+    right: 20px;
+    border-radius: 3px;
+    background-color: var(--purple-color);
+}
+
+.list-info-line::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    right: 14px;
+    top: 0;
+    border: 3px solid var(--purple-color);
 }
 
 @media only screen and (min-width: 48em) {
@@ -207,7 +343,18 @@ body::-webkit-scrollbar-thumb {
     .home-content-desc {
         font-size: 2rem;
     }
+
+    .home-content-contact {
+        width: 40%;
+    }
+
+    .list-info-item {
+        font-size: 1.3rem;
+        margin-bottom: 45px;
+    }
 }
+
+
 
 
 /* 600px --- 767px */
@@ -242,6 +389,10 @@ body::-webkit-scrollbar-thumb {
     
     .home-content-desc {
         font-size: 3rem;
+    }
+
+    .home-content-contact {
+        width: 40%;
     }
 }
 
