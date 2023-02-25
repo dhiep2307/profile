@@ -399,7 +399,6 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     box-shadow: 2px 2px 10px var(--purple-color);
     border-radius: 1.6rem;
-    cursor: pointer;
     top: 0;
     transition: top .6s;
     user-select: none;
@@ -408,7 +407,6 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .skills-item .card-title {
@@ -449,11 +447,15 @@ body::-webkit-scrollbar-thumb {
 
 .contact-form-input-box {
     margin-bottom: 25px;
+    position: relative;
+}
+
+.contact-form-input-box.submit {
+    display: flex;
+    justify-content: right;
 }
 
 .btn-submit {
-    position: absolute;
-    right: 5px;
     font-size: 1.5rem;
     padding: .5rem 2.2rem;
     border-radius: 1rem;
@@ -468,15 +470,16 @@ body::-webkit-scrollbar-thumb {
 
 .btn-submit:hover {
     box-shadow: 1px 1px 5px var(--purple-color);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .contact-form-input-box>input,
 .contact-form-input-box>textarea {
     width: 100%;
-    padding: 10px 20px;
-    font-size: 1.6rem;
+    padding: 12px 25px;
+    font-size: 1.5rem;
     border-radius: 1rem;
+    background-color: var(--white-color);
     border: 2px solid #acacac;
 }
 
@@ -490,7 +493,39 @@ body::-webkit-scrollbar-thumb {
 .contact-form-input-box>input:focus,
 .contact-form-input-box>textarea:focus {
     outline-color: var(--purple-color);
- }
+}
+
+.contact-form-input-box>input::placeholder,
+.contact-form-input-box>textarea::placeholder {
+    user-select: none;
+    -webkit-user-select: none;
+}
+.contact-form-input-box-label {
+    position: absolute;
+    left: 27px;
+    font-size: 1.4rem;
+    top: 15px;
+    pointer-events: none;
+    color: #acacac;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: .25s ease;
+}
+
+.contact-form-input-box>input:not(:placeholder-shown) + .contact-form-input-box-label,
+.contact-form-input-box>textarea:not(:placeholder-shown) + .contact-form-input-box-label,
+.contact-form-input-box>input:focus + .contact-form-input-box-label,
+.contact-form-input-box>textarea:focus + .contact-form-input-box-label {
+    top: -15px;
+    padding: 0 5px;
+    background-color: var(--white-color);
+}
+
+.contact-form-input-box>input:focus + .contact-form-input-box-label,
+.contact-form-input-box>textarea:focus + .contact-form-input-box-label {
+    color: var(--purple-color);
+}
+
 
 .footer {
     min-height: 300px;
@@ -556,7 +591,9 @@ body::-webkit-scrollbar-thumb {
     }
 
     .skills .row {
-        width: unset;
+        margin: 0;
+        width: 100%;
+        justify-content: center;
     }
 
     .skills::before {
@@ -565,6 +602,10 @@ body::-webkit-scrollbar-thumb {
 
     .contact-form {
         padding-top: 0px;
+    }
+
+    .btn-submit {
+        cursor: unset;
     }
 
     .footer {
@@ -615,6 +656,10 @@ body::-webkit-scrollbar-thumb {
 
     .skills::before {
         top: -15px;
+    }
+
+    .btn-submit {
+        cursor: unset;
     }
 
     .footer {
