@@ -713,11 +713,7 @@
     }
 }
 
-@media only screen and (min-width: 62em) and (max-width: 81.25em) {
-    .wide {
-        width: 984px;
-    }
-
+@media only screen and (min-width: 62em) and (max-width: 74.9375em) {
     .l-0 {
         display: none;
     }
@@ -767,10 +763,17 @@
     }
 }
 
-@media only screen and (min-width: 81.3125em) and (max-width: 99.9375em) {
+@media only screen and (min-width: 62em) and (max-width: 81.25em) {
+    .wide {
+        width: 984px;
+    }
+}
+
+@media only screen and (min-width: 75em) and (max-width: 99.9375em) {
     .wide {
         width: 1200px;
     }
+
     .ll-0 {
         display: none;
     }
@@ -819,4 +822,5 @@
         margin-left: 91.66667%;
     }
 }
+
 
