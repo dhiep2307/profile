@@ -15,6 +15,7 @@
 
     --white-color: #fff;
     --purple-color: #6600cc;
+    --purple-color-8: rgba(102, 0, 204, 0.8);
     --black-color: #000;
     --red-color: rgb(126, 0, 0);
     --linear-bground : linear-gradient(to bottom left, #9933ff 0%, #cc33ff 100%);
@@ -25,6 +26,11 @@ html {
     overflow-y: auto;
     scroll-snap-type: y;
     scroll-behavior: smooth;
+}
+
+::selection {
+    color: var(--white-color);
+    background: var(--purple-color);
 }
 
 body {
@@ -126,9 +132,23 @@ body::-webkit-scrollbar-thumb {
     height: 4px;
     border-radius: 3px;
     background: var(--linear-bground);
-    left: 0;
-    right: 0;
     bottom: 0;
+    animation: selectFadeIn .3s ease forwards;
+}
+
+.select.menu-list_item a {
+    color: var(--purple-color);
+}
+
+@keyframes selectFadeIn {
+    from {
+        left: 50%;
+        right: 50%;
+    }
+    to {
+        left: -2px;
+        right: -2px;
+    }
 }
 
 .menu-list_item a:hover {
@@ -526,6 +546,41 @@ body::-webkit-scrollbar-thumb {
     color: var(--purple-color);
 }
 
+.btn-back {
+    position: fixed;
+    font-size: 2.6rem;
+    right: 2rem;
+    bottom: -2rem;
+    color: var(--purple-color);
+    transition: .25s ease;
+    opacity: 0;
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+
+.bottom-2 {
+    bottom: 2rem;
+}
+
+
+
+.btn-back:hover {
+    bottom: 2.2rem;
+}
+
+.btn-back a {
+    color: var(--purple-color);
+    text-decoration: none;
+}
+
+.btn-back a i {
+    color: var(--purple-color);
+    background-color: var(--white-color);
+    border-radius: 50%;
+    border: 1px solid var(--purple-color);
+}
 
 .footer {
     min-height: 300px;
@@ -581,6 +636,10 @@ body::-webkit-scrollbar-thumb {
         width: 40%;
     }
 
+    .home-content-contact-link {
+        cursor: none;
+    }
+
     .list-info-item {
         font-size: 1.3rem;
         margin-bottom: 45px;
@@ -606,6 +665,19 @@ body::-webkit-scrollbar-thumb {
 
     .btn-submit {
         cursor: unset;
+    }
+
+    .bottom-2 {
+        bottom: 1rem;
+    }
+    
+    .btn-back {
+        font-size: 2.2rem;
+        right: 1rem;
+    }
+    
+    .btn-back a {
+        cursor: none;
     }
 
     .footer {
@@ -654,12 +726,29 @@ body::-webkit-scrollbar-thumb {
         width: 40%;
     }
 
+    .home-content-contact-link {
+        cursor: none;
+    }
+
     .skills::before {
         top: -15px;
     }
 
     .btn-submit {
         cursor: unset;
+    }
+
+    .bottom-2 {
+        bottom: 1rem;
+    }
+    
+    .btn-back {
+        font-size: 2.2rem;
+        right: 1rem;
+    }
+
+    .btn-back a {
+        cursor: none;
     }
 
     .footer {
