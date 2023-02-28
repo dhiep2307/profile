@@ -79,8 +79,15 @@ body::-webkit-scrollbar-thumb {
     justify-content: left;
     align-items: center;
 }
+img.logo-icon {
+    border: 1px solid black;
+    background: var(--linear-bground);
+    width: 28px;
+    height: 28px;
+    border-radius: .3rem;
+}
 
-.logo-icon {
+div.logo-icon {
     font-size: 1rem;
     padding: 4px 4px;
     border: 1px solid black;
@@ -114,30 +121,31 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     position: relative;
-    padding: 0px 5px;
 }
 
 .menu-list_item a {
+    cursor: pointer;
     text-decoration: none;
     color: var(--black-color);
-    transition: color .5s, padding-bottom .2s;
+    transition: color .3s, top .3s;
+    position: relative;
 }
 
-.select.menu-list_item::before {
+/* .select.menu-list_item::before {
     position: absolute;
     content: "";
-    height: 4px;
+    height: 6px;
     border-radius: 3px;
     background: var(--linear-bground);
     bottom: 0;
-    animation: selectFadeIn .3s ease forwards;
-}
+    animation: selectFadeIn .1s ease forwards;
+} */
 
 .select.menu-list_item a {
     color: var(--purple-color);
+    font-weight: bold;
 }
 
 @keyframes selectFadeIn {
@@ -146,15 +154,14 @@ body::-webkit-scrollbar-thumb {
         right: 50%;
     }
     to {
-        left: -2px;
-        right: -2px;
+        left: -10px;
+        right: -10px;
     }
 }
 
-.menu-list_item a:hover {
+.menu-list_item:not(.select) a:hover {
     color: var(--purple-color);
-    padding-bottom: 2px;
-
+    top: -1px;
 }
 
 .container {
@@ -256,20 +263,14 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.8rem;
     color: #acacac;
     bottom: 0;
-    transition: bottom .3s;
-}
-
-.home-content-contact-link:hover {
-    bottom: 1px;
-}
-
-.home-content-contact-facebook,
-.home-content-contact-github,
-.home-content-contact-yotube {
     transition: color .3s;
 }
 
-.home-content-contact-facebook:hover {
+.home-content-contact-link:hover {
+    color: #8a8a8a;
+}
+
+/* .home-content-contact-facebook:hover {
     color: rgb(24, 28, 255, 0.5);
 }
 
@@ -279,7 +280,7 @@ body::-webkit-scrollbar-thumb {
 
 .home-content-contact-youtube:hover {
     color: rgba(255, 7, 7, 0.5);
-}
+} */
 
 .about {
 
@@ -551,7 +552,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 2.6rem;
     right: 2rem;
     bottom: -2rem;
-    color: var(--purple-color);
     transition: .25s ease;
     opacity: 0;
 }
@@ -564,14 +564,11 @@ body::-webkit-scrollbar-thumb {
     bottom: 2rem;
 }
 
-
-
 .btn-back:hover {
-    bottom: 2.2rem;
+    bottom: 2.1rem;
 }
 
 .btn-back a {
-    color: var(--purple-color);
     text-decoration: none;
 }
 
@@ -579,17 +576,119 @@ body::-webkit-scrollbar-thumb {
     color: var(--purple-color);
     background-color: var(--white-color);
     border-radius: 50%;
-    border: 1px solid var(--purple-color);
 }
 
 .footer {
-    min-height: 300px;
-    background-color: #000000b4;
+    padding-top: 30px;
+    background: var(--purple-color);
+}
+
+.footer ::selection {
+    background-color: white;
+    color: var(--purple-color);
 }
 
 .footer .content {
-    height: 100%;
+    
 }
+
+.footer .content .col {
+    
+}
+.footer-box_avt-img {
+    align-items: center;
+}
+.footer-box_avt-img img {
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+    background: var(--linear-bground);
+    border-radius: 15px;
+}
+
+.footer-box_avt-name {
+    align-items: center;
+}
+
+.footer-box_avt-name p.name {
+    font-size: 2.2rem;
+    color: var(--white-color);
+}
+
+.footer-box_avt-name .dev {
+    font-size: 1.3rem;
+    color: var(--white-color);
+}
+
+.footer-detail {
+    border-left: 1px solid var(--purple-color);
+}
+
+.footer-contact-title,
+.footer-project-title {
+    font-size: 1.4rem;
+    color: var(--white-color);
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.footer-detail-item {
+    padding: 8px 0px 8px 12px;
+}
+
+.footer-detail-item a,
+.footer-detail-item p {
+    text-decoration: none;
+    width: 100%;
+    color: var(--white-color);
+    font-size: 1.2rem;
+    position: relative;
+    transition: color .25s ease;
+    top: 0;
+}
+
+.footer-detail-item p {
+    user-select: all;
+}
+
+.footer-detail-item a:hover {
+    color: #bbbbbb;
+}
+
+.footer-detail-item a i,
+.footer-detail-item p i {
+    font-size: 1.2rem;
+    width: 1.4rem;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.footer-box_avt {
+    margin-bottom: 20px;
+}
+
+.footer-copy-right {
+    color: var(--white-color);
+    font-size: 1rem;
+    text-align: center;
+    padding: 6px 0;
+    margin-top: 10px;
+    user-select: none;
+    pointer-events: none;
+    position: relative;
+}
+
+.footer-copy-right::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    background: var(--white-color);
+    top: 0;
+    right: -1000px;
+    left: -1000px;
+}
+
 
 @media only screen and (min-width: 48em) {
     .menu-list {
@@ -602,6 +701,10 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (max-width: 37.5em) {
     body::-webkit-scrollbar {
         width: 3px;
+    }
+
+    a {
+        cursor: none;
     }
 
     .home-content {
@@ -659,6 +762,10 @@ body::-webkit-scrollbar-thumb {
         top: -15px;
     }
 
+    .skills-item .card:hover {
+        top: 0;
+    }
+
     .contact-form {
         padding-top: 0px;
     }
@@ -683,6 +790,26 @@ body::-webkit-scrollbar-thumb {
     .footer {
         margin-top: 150px;
     }
+
+    .footer-box_avt-name {
+        text-align: center;
+    }
+
+    .footer-detail {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .footer-detail-item p,
+    .footer-detail-item a {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-detail-item a i,
+    .footer-detail-item p i {
+        margin-right: 2px;
+    }
 }
 
 
@@ -692,6 +819,10 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (min-width: 37.5em) and (max-width: 47.9375em) {
     body::-webkit-scrollbar {
         width: 3px;
+    }
+
+    a {
+        cursor: none;
     }
 
     .home-content {
@@ -732,6 +863,10 @@ body::-webkit-scrollbar-thumb {
 
     .skills::before {
         top: -15px;
+    }
+
+    .skills-item .card:hover {
+        top: 0;
     }
 
     .btn-submit {
